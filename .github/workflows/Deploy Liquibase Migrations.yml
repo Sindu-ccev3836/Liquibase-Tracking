@@ -36,7 +36,7 @@ jobs:
           # SQL Server JDBC
           curl -L -o deps/mssql-jdbc.jar https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc/13.2.1.jre11/mssql-jdbc-13.2.1.jre11.jar
           # MSAL4J for Azure AD auth
-          curl -L -o deps/msal4j.jar https://repo1.maven.org/maven2/com/microsoft/aad/msal4j/1.11.1/msal4j-1.11.1.jar
+          curl -L -o deps/msal4j.jar https://repo1.maven.org/maven2/com/microsoft/azure/msal4j/1.20.1/msal4j-1.20.1.jar
           # OAuth2 / OIDC support libs
           curl -L -o deps/oauth2-oidc-sdk.jar https://repo1.maven.org/maven2/com/nimbusds/oauth2-oidc-sdk/11.32/oauth2-oidc-sdk-11.32.jar
           curl -L -o deps/nimbus-jose-jwt.jar https://repo1.maven.org/maven2/com/nimbusds/nimbus-jose-jwt/9.42/nimbus-jose-jwt-9.42.jar
