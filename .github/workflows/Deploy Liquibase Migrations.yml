@@ -79,5 +79,5 @@ jobs:
           ls -lah deps # debug step (optional) to check contents
           liquibase \
             --classpath=$(echo deps/*.jar | tr ' ' ':') \
-            --changeLogFile=changelog/db.changelog-master.yaml \
+            --changeLogFile=db.changelog-master.yaml \
             update
