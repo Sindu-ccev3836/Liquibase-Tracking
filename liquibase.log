@@ -1,0 +1,397 @@
+[2026-02-02 12:49:39] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 12:49:39 using Java 17.0.12 (version 5.0.1 #9400 built at 2025-10-03 17:37+0000)
+[2026-02-02 12:49:39] INFO [liquibase.ui] Liquibase Version: 5.0.1
+[2026-02-02 12:49:39] INFO [liquibase.ui] 
+[2026-02-02 12:49:39] INFO [liquibase.integration] Starting command execution.
+[2026-02-02 12:49:40] INFO [liquibase.command] Logging exception.
+[2026-02-02 12:49:40] INFO [liquibase.ui] ERROR: Exception Details
+[2026-02-02 12:49:40] INFO [liquibase.ui] ERROR: Exception Primary Class:  SQLServerException
+[2026-02-02 12:49:40] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+[2026-02-02 12:49:40] INFO [liquibase.ui] ERROR: Exception Primary Source:  5.0.1
+[2026-02-02 12:49:40] INFO [liquibase.command] Command execution complete
+[2026-02-02 12:49:41] SEVERE [liquibase.integration] Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:310)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.command.CommandScope.execute(CommandScope.java:251)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2031)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:412)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:389)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:386)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:105)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:120)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:126)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:86)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:263)
+	... 26 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:115)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.lambda$obtainDatabase$0(DbUrlConnectionCommandStep.java:113)
+	at liquibase.Scope.lambda$child$0(Scope.java:214)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:213)
+	at liquibase.Scope.child(Scope.java:192)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:112)
+	... 28 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:83)
+	... 34 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 37 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:56)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 38 more
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.getFedAuthToken(SQLServerConnection.java:6506)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.onFedAuthInfo(SQLServerConnection.java:6482)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.processFedAuthInfo(SQLServerConnection.java:6316)
+	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onFedAuthInfo(tdsparser.java:335)
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:130)
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:7423)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5921)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5853)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7825)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4828)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4261)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3817)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371)
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:48)
+	... 39 more
+
+[2026-02-02 12:49:41] INFO [liquibase.ui] Logs saved to C:/Users/CCEV3836/liquibase-5.0.1/liquibase.log
+[2026-02-02 12:50:30] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 12:50:30 using Java 17.0.12 (version 5.0.1 #9400 built at 2025-10-03 17:37+0000)
+[2026-02-02 12:50:30] INFO [liquibase.ui] Liquibase Version: 5.0.1
+[2026-02-02 12:50:30] INFO [liquibase.ui] 
+[2026-02-02 12:50:30] INFO [liquibase.integration] Starting command execution.
+[2026-02-02 12:50:31] INFO [liquibase.command] Logging exception.
+[2026-02-02 12:50:31] INFO [liquibase.ui] ERROR: Exception Details
+[2026-02-02 12:50:31] INFO [liquibase.ui] ERROR: Exception Primary Class:  SQLServerException
+[2026-02-02 12:50:31] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+[2026-02-02 12:50:31] INFO [liquibase.ui] ERROR: Exception Primary Source:  5.0.1
+[2026-02-02 12:50:31] INFO [liquibase.command] Command execution complete
+[2026-02-02 12:50:32] SEVERE [liquibase.integration] Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:310)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.command.CommandScope.execute(CommandScope.java:251)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2031)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:412)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:389)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:386)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:105)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:120)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:126)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:86)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:263)
+	... 26 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:115)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.lambda$obtainDatabase$0(DbUrlConnectionCommandStep.java:113)
+	at liquibase.Scope.lambda$child$0(Scope.java:214)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:213)
+	at liquibase.Scope.child(Scope.java:192)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:112)
+	... 28 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:83)
+	... 34 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 37 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;database=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:56)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 38 more
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.getFedAuthToken(SQLServerConnection.java:6506)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.onFedAuthInfo(SQLServerConnection.java:6482)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.processFedAuthInfo(SQLServerConnection.java:6316)
+	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onFedAuthInfo(tdsparser.java:335)
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:130)
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:7423)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5921)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5853)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7825)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4828)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4261)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3817)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371)
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:48)
+	... 39 more
+
+[2026-02-02 12:50:32] INFO [liquibase.ui] Logs saved to C:/Users/CCEV3836/liquibase-5.0.1/liquibase.log
+[2026-02-02 12:51:11] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 12:51:11 using Java 17.0.12 (version 5.0.1 #9400 built at 2025-10-03 17:37+0000)
+[2026-02-02 12:51:11] INFO [liquibase.ui] Liquibase Version: 5.0.1
+[2026-02-02 12:51:11] INFO [liquibase.ui] 
+[2026-02-02 12:51:11] INFO [liquibase.integration] Starting command execution.
+[2026-02-02 12:51:11] INFO [liquibase.command] Logging exception.
+[2026-02-02 12:51:11] INFO [liquibase.ui] ERROR: Exception Details
+[2026-02-02 12:51:11] INFO [liquibase.ui] ERROR: Exception Primary Class:  SQLServerException
+[2026-02-02 12:51:11] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+[2026-02-02 12:51:11] INFO [liquibase.ui] ERROR: Exception Primary Source:  5.0.1
+[2026-02-02 12:51:11] INFO [liquibase.command] Command execution complete
+[2026-02-02 12:51:12] SEVERE [liquibase.integration] Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;databaseName=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;databaseName=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:310)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.command.CommandScope.execute(CommandScope.java:251)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2031)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:412)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:389)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:386)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:105)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:120)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;databaseName=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:126)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:86)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:263)
+	... 26 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;databaseName=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:115)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.lambda$obtainDatabase$0(DbUrlConnectionCommandStep.java:113)
+	at liquibase.Scope.lambda$child$0(Scope.java:214)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:213)
+	at liquibase.Scope.child(Scope.java:192)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:112)
+	... 28 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;databaseName=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:83)
+	... 34 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;databaseName=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 37 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to jdbc:sqlserver://l3x2kwyjgf3u5bn5z7vq2nd6qi-ekvxddejk5kepoj62ii6ps4esy.datawarehouse.fabric.microsoft.com:1433;databaseName=BronzeWarehouse_Test;encrypt=true;authentication=ActiveDirectoryServicePrincipal with driver com.microsoft.sqlserver.jdbc.SQLServerDriver.  Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:56)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 38 more
+Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: Failed to load MSAL4J Java library for performing ActiveDirectoryServicePrincipal authentication.
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.getFedAuthToken(SQLServerConnection.java:6506)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.onFedAuthInfo(SQLServerConnection.java:6482)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.processFedAuthInfo(SQLServerConnection.java:6316)
+	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onFedAuthInfo(tdsparser.java:335)
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:130)
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:7423)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5921)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5853)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7825)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4828)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4261)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3817)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371)
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:48)
+	... 39 more
+
+[2026-02-02 12:51:12] INFO [liquibase.ui] Logs saved to C:/Users/CCEV3836/liquibase-5.0.1/liquibase.log
+[2026-02-02 12:57:11] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 12:57:11 using Java 17.0.12 (version 5.0.1 #9400 built at 2025-10-03 17:37+0000)
+[2026-02-02 12:57:11] INFO [liquibase.ui] Liquibase Version: 5.0.1
+[2026-02-02 12:57:11] INFO [liquibase.ui] 
+[2026-02-02 12:57:11] INFO [liquibase.integration] Starting command execution.
+[2026-02-02 12:57:12] INFO [liquibase.command] Command execution complete
+[2026-02-02 12:57:13] SEVERE [liquibase.integration] org/slf4j/LoggerFactory
+  - Caused by: org.slf4j.LoggerFactory
+java.lang.NoClassDefFoundError: org/slf4j/LoggerFactory
+	at com.microsoft.aad.msal4j.ServerSideTelemetry.<clinit>(ServerSideTelemetry.java:17)
+	at com.microsoft.aad.msal4j.ServiceBundle.<init>(ServiceBundle.java:21)
+	at com.microsoft.aad.msal4j.AbstractClientApplicationBase.<init>(AbstractClientApplicationBase.java:589)
+	at com.microsoft.aad.msal4j.ConfidentialClientApplication.<init>(ConfidentialClientApplication.java:57)
+	at com.microsoft.aad.msal4j.ConfidentialClientApplication.<init>(ConfidentialClientApplication.java:33)
+	at com.microsoft.aad.msal4j.ConfidentialClientApplication$Builder.build(ConfidentialClientApplication.java:163)
+	at com.microsoft.sqlserver.jdbc.SQLServerMSAL4JUtils.getSqlFedAuthTokenPrincipal(SQLServerMSAL4JUtils.java:205)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.getFedAuthToken(SQLServerConnection.java:6549)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.onFedAuthInfo(SQLServerConnection.java:6482)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.processFedAuthInfo(SQLServerConnection.java:6316)
+	at com.microsoft.sqlserver.jdbc.TDSTokenHandler.onFedAuthInfo(tdsparser.java:335)
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:130)
+	at com.microsoft.sqlserver.jdbc.TDSParser.parse(tdsparser.java:42)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.sendLogon(SQLServerConnection.java:7423)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.logon(SQLServerConnection.java:5921)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection$LogonCommand.doExecute(SQLServerConnection.java:5853)
+	at com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:7825)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:4828)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectHelper(SQLServerConnection.java:4261)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.login(SQLServerConnection.java:3817)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connectInternal(SQLServerConnection.java:3591)
+	at com.microsoft.sqlserver.jdbc.SQLServerConnection.connect(SQLServerConnection.java:2286)
+	at com.microsoft.sqlserver.jdbc.SQLServerDriver.connect(SQLServerDriver.java:1371)
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:48)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:83)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.lambda$obtainDatabase$0(DbUrlConnectionCommandStep.java:113)
+	at liquibase.Scope.lambda$child$0(Scope.java:214)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:213)
+	at liquibase.Scope.child(Scope.java:192)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:112)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:86)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:263)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.command.CommandScope.execute(CommandScope.java:251)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2031)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:412)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:389)
+	at liquibase.Scope.child(Scope.java:223)
+	at liquibase.Scope.child(Scope.java:199)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:386)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:105)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:120)
+Caused by: java.lang.ClassNotFoundException: org.slf4j.LoggerFactory
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 63 more
+
