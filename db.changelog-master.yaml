@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: init-001
+      author: yourname
+      changes:
+        - sql:
+            sql: |
+              -- sanity check change
+              SELECT 1;
+
+
