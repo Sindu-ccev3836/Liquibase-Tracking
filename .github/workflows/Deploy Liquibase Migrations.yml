@@ -71,6 +71,7 @@ jobs:
                     
       # 5) Run Liquibase update with all jars on the classpath
       - name: Run Liquibase Update
+        
         env:
           LIQUIBASE_COMMAND_URL: ${{ secrets.FABRIC_SQL_JDBC_URL }}
           LIQUIBASE_COMMAND_USERNAME: ${{ secrets.FABRIC_SQL_USER }}
@@ -81,3 +82,4 @@ jobs:
             --classpath=$(echo deps/*.jar | tr ' ' ':') \
             --changeLogFile=db.changelog-master.yaml \
             update
+          
