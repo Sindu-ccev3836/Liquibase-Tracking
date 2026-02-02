@@ -52,8 +52,9 @@ jobs:
             https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar
           # Azure identity / SDK json support
           curl -fL -o deps/azure-core.jar https://repo1.maven.org/maven2/com/azure/azure-core/1.38.0/azure-core-1.38.0.jar
-          curl -fL -o deps/azure-json.jar \
-            https://repo1.maven.org/maven2/com/azure/azure-json/1.5.1/azure-json-1.5.1.jar
+
+          curl -L -o deps/azure-json.jar https://repo1.maven.org/maven2/com/azure/azure-json/1.5.0/azure-json-1.5.0.jar
+
           curl -fL -o deps/azure-identity.jar https://repo1.maven.org/maven2/com/azure/azure-identity/1.14.1/azure-identity-1.14.1.jar
       # 5) Run Liquibase update with all jars on the classpath
       - name: Run Liquibase Update
