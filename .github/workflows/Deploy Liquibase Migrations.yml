@@ -1,0 +1,38 @@
+name: Liquibase Migrations
+
+# Trigger on pushes to main (or any other branch you prefer)
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+
+jobs:
+  migrate:
+    name: Run Liquibase Update
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out your repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Sets up Liquibase (installs it)
+      - name: Setup Liquibase
+        uses: liquibase/setup-liquibase@v2
+        with:
+          version: '5.0.1'        # set the Liquibase version you want
+          edition: 'community'    # or 'pro' with LIQUIBASE_LICENSE_KEY
+
+      # Run Liquibase migrations
+      - name: Run Liquibase Update
+        env:
+          LIQUIBASE_URL: ${{ secrets.FABRIC_SQL_JDBC_URL }}
+          LIQUIBASE_USERNAME: ${{ secrets.FABRIC_SQL_USER }}
+          LIQUIBASE_PASSWORD: ${{ secrets.FABRIC_SQL_PASSWORD }}
+        run: |
+          liquibase \
+            --changeLogFile=changelog/db.changelog-master.yaml \
+            --url="${LIQUIBASE_URL}" \
+            --username="${LIQUIBASE_USERNAME}" \
+            --password="${LIQUIBASE_PASSWORD}" \
+            update
