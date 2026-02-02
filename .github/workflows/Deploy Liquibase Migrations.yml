@@ -25,10 +25,11 @@ jobs:
 
       # Run Liquibase migrations
       - name: Run Liquibase Update
-      env:
-        LIQUIBASE_COMMAND_URL: ${{ secrets.FABRIC_SQL_JDBC_URL }}
-        LIQUIBASE_COMMAND_USERNAME: ${{ secrets.FABRIC_SQL_USER }}
-        LIQUIBASE_COMMAND_PASSWORD: ${{ secrets.FABRIC_SQL_PASSWORD }}
+        env:
+          LIQUIBASE_COMMAND_URL: ${{ secrets.FABRIC_SQL_JDBC_URL }}
+          LIQUIBASE_COMMAND_USERNAME: ${{ secrets.FABRIC_SQL_USER }}
+          LIQUIBASE_COMMAND_PASSWORD: ${{ secrets.FABRIC_SQL_PASSWORD }}
+
         run: |
           liquibase \
             --changeLogFile=changelog/db.changelog-master.yaml \
