@@ -82,4 +82,4 @@ jobs:
             --classpath=$(echo deps/*.jar | tr ' ' ':') \
             --changeLogFile=db.changelog-master.yaml \
             update
-          run: echo $LIQUIBASE_COMMAND_URL
+          
