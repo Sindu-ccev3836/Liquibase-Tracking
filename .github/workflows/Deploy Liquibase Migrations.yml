@@ -1,6 +1,6 @@
 name: Liquibase Migrations
 
-# Trigger on pushes to main (or any other branch you prefer)
+# Trigger on pushes to main or PRs
 on:
   push:
     branches: [ "main" ]
@@ -12,28 +12,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks out your repository code
+      # 👇 Checkout your repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Sets up Liquibase (installs it)
+      # 👇 Install Java (GH runners have Java but sometimes explicit setup helps)
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      # 👇 Setup Liquibase (installs CLI)
       - name: Setup Liquibase
         uses: liquibase/setup-liquibase@v2
         with:
-          version: '5.0.1'        # set the Liquibase version you want
-          edition: 'community'    # or 'pro' with LIQUIBASE_LICENSE_KEY
+          version: '5.0.1'
+          edition: 'community'
 
-      # Run Liquibase migrations
+      # 👇 Install SQL Server JDBC Driver via Liquibase Package Manager
+      - name: Install SQL Server JDBC driver
+        run: liquibase lpm add mssql --global
+
+      # 👇 Run Liquibase migrations
       - name: Run Liquibase Update
         env:
           LIQUIBASE_COMMAND_URL: ${{ secrets.FABRIC_SQL_JDBC_URL }}
           LIQUIBASE_COMMAND_USERNAME: ${{ secrets.FABRIC_SQL_USER }}
           LIQUIBASE_COMMAND_PASSWORD: ${{ secrets.FABRIC_SQL_PASSWORD }}
-
         run: |
-          liquibase \
-            --changeLogFile=changelog/db.changelog-master.yaml \
-            --url="${LIQUIBASE_COMMAND_URL}" \
-            --username="${LIQUIBASE_COMMAND_USERNAME}" \
-            --password="${LIQUIBASE_COMMAND_PASSWORD}" \
-            update
+          liquibase update --changeLogFile=changelog/db.changelog-master.yaml
