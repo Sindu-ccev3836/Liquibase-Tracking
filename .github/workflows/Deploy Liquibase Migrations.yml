@@ -53,7 +53,8 @@ jobs:
           LIQUIBASE_COMMAND_USERNAME: ${{ secrets.FABRIC_SQL_USER }}
           LIQUIBASE_COMMAND_PASSWORD: ${{ secrets.FABRIC_SQL_PASSWORD }}
         run: |
+          ls -lah deps # debug step (optional) to check contents
           liquibase \
-            --classpath=deps/* \
+            --classpath=$(echo deps/*.jar | tr ' ' ':') \
             --changeLogFile=changelog/db.changelog-master.yaml \
             update
