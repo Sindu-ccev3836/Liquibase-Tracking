@@ -1,6 +1,5 @@
 name: Liquibase Migrations
 
-# Trigger on pushes to main or PRs
 on:
   push:
     branches: [ "main" ]
@@ -12,33 +11,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 👇 Checkout your repository
+      # 1) Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 👇 Install Java (GH runners have Java but sometimes explicit setup helps)
+      # 2) Setup Java (Liquibase needs Java)
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
 
-      # 👇 Setup Liquibase (installs CLI)
+      # 3) Setup Liquibase CLI
       - name: Setup Liquibase
         uses: liquibase/setup-liquibase@v2
         with:
           version: '5.0.1'
           edition: 'community'
 
-      # 👇 Install SQL Server JDBC Driver via Liquibase Package Manager
-      - name: Install SQL Server JDBC driver
-        run: liquibase lpm add mssql --global
+      # 4) Download JDBC driver + MSAL4J & dependencies
+      - name: Download Dependencies
+        run: |
+          mkdir deps
+          # SQL Server JDBC
+          curl -L -o deps/mssql-jdbc.jar https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc/13.2.1.jre11/mssql-jdbc-13.2.1.jre11.jar
+          # MSAL4J for Azure AD auth
+          curl -L -o deps/msal4j.jar https://repo1.maven.org/maven2/com/microsoft/aad/msal4j/1.11.1/msal4j-1.11.1.jar
+          # OAuth2 / OIDC support libs
+          curl -L -o deps/oauth2-oidc-sdk.jar https://repo1.maven.org/maven2/com/nimbusds/oauth2-oidc-sdk/11.32/oauth2-oidc-sdk-11.32.jar
+          curl -L -o deps/nimbus-jose-jwt.jar https://repo1.maven.org/maven2/com/nimbusds/nimbus-jose-jwt/9.42/nimbus-jose-jwt-9.42.jar
+          # JSON smart helpers
+          curl -L -o deps/json-smart.jar https://repo1.maven.org/maven2/net/minidev/json-smart/2.4.8/json-smart-2.4.8.jar
+          curl -L -o deps/accessors-smart.jar https://repo1.maven.org/maven2/net/minidev/accessors-smart/2.4.8/accessors-smart-2.4.8.jar
+          # Additional Nimbus content-type
+          curl -L -o deps/content-type.jar https://repo1.maven.org/maven2/com/nimbusds/content-type/2.2/content-type-2.2.jar
 
-      # 👇 Run Liquibase migrations
+      # 5) Run Liquibase update with all jars on the classpath
       - name: Run Liquibase Update
         env:
           LIQUIBASE_COMMAND_URL: ${{ secrets.FABRIC_SQL_JDBC_URL }}
           LIQUIBASE_COMMAND_USERNAME: ${{ secrets.FABRIC_SQL_USER }}
           LIQUIBASE_COMMAND_PASSWORD: ${{ secrets.FABRIC_SQL_PASSWORD }}
         run: |
-          liquibase update --changeLogFile=changelog/db.changelog-master.yaml
+          liquibase \
+            --classpath=deps/* \
+            --changeLogFile=changelog/db.changelog-master.yaml \
+            update
