@@ -76,6 +76,7 @@ jobs:
           LIQUIBASE_COMMAND_URL: ${{ secrets.FABRIC_SQL_JDBC_URL }}
           LIQUIBASE_COMMAND_USERNAME: ${{ secrets.FABRIC_SQL_USER }}
           LIQUIBASE_COMMAND_PASSWORD: ${{ secrets.FABRIC_SQL_PASSWORD }}
+          run: echo $LIQUIBASE_COMMAND_URL
         run: |
           ls -lah deps # debug step (optional) to check contents
           liquibase \
