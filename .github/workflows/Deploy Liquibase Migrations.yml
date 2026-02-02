@@ -45,7 +45,11 @@ jobs:
           curl -L -o deps/accessors-smart.jar https://repo1.maven.org/maven2/net/minidev/accessors-smart/2.4.8/accessors-smart-2.4.8.jar
           # Additional Nimbus content-type
           curl -L -o deps/content-type.jar https://repo1.maven.org/maven2/com/nimbusds/content-type/2.2/content-type-2.2.jar
-
+          # SLF4J API + Simple implementation
+          curl -fL -o deps/slf4j-api.jar \
+            https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
+          curl -fL -o deps/slf4j-simple.jar \
+            https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.36/slf4j-simple-1.7.36.jar
       # 5) Run Liquibase update with all jars on the classpath
       - name: Run Liquibase Update
         env:
