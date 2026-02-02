@@ -56,6 +56,19 @@ jobs:
           curl -L -o deps/azure-json.jar https://repo1.maven.org/maven2/com/azure/azure-json/1.5.0/azure-json-1.5.0.jar
 
           curl -fL -o deps/azure-identity.jar https://repo1.maven.org/maven2/com/azure/azure-identity/1.14.1/azure-identity-1.14.1.jar
+          # Jackson core
+          curl -fL -o deps/jackson-core.jar \
+            https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.15.4/jackson-core-2.15.4.jar
+          
+          # Jackson annotations
+          curl -fL -o deps/jackson-annotations.jar \
+            https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.15.4/jackson-annotations-2.15.4.jar
+          
+          # Jackson databind (THIS is ObjectMapper)
+          curl -fL -o deps/jackson-databind.jar \
+            https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.15.4/jackson-databind-2.15.4.jar
+          
+                    
       # 5) Run Liquibase update with all jars on the classpath
       - name: Run Liquibase Update
         env:
